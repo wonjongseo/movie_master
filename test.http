@@ -1,0 +1,7 @@
+# curl --request GET \
+#      --url 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=1&sort_by=popularity.desc' \
+#      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTZkY2EzMzNlYTdiNjk3M2U3ZDBmZTA5ZmMzYzE5NCIsIm5iZiI6MTc0MDc1MDkzOS4wMDQsInN1YiI6IjY3YzFjMDVhOWFkY2QyNTYyNTM1YzExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3VG4OyKeC4gI3rKeZq6FUhp6w0ajbZEaleQjuf0wD94' \
+#      --header 'accept: application/json'
+
+
+http://localhost:3000/api/v1/movie/trending
