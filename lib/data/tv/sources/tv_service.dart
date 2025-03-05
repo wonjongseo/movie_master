@@ -61,7 +61,7 @@ class TvApiServiceImpl extends TvService {
   Future<Either> searchTv(String query) async {
     try {
       var response = await sl<TmDBDioClient>().get(
-        'search/tv?query=$query&include_adult=false&language=en-US&page=1',
+        'search/tv?query=$query&include_adult=false&language=ko-KR&page=1',
       );
       return Right(response.data);
     } on DioException catch (e) {

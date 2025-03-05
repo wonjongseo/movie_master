@@ -20,7 +20,10 @@ class VideoOverview extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           overview,
-          style: Theme.of(context).primaryTextTheme.bodyMedium,
+          style: Theme.of(context)
+              .primaryTextTheme
+              .bodyMedium!
+              .copyWith(color: Colors.black),
         )
       ],
     );

@@ -74,7 +74,7 @@ class MovieServiceImpl extends MovieService {
   Future<Either> searchMovie(String query) async {
     try {
       var response = await sl<TmDBDioClient>().get(
-        'search/movie?query=$query&include_adult=false&language=en-US&page=1',
+        'search/movie?query=$query&include_adult=false&language=ko-KR&page=1',
       );
       return Right(response.data);
     } on DioException catch (e) {

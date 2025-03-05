@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_report_app/common/helper/navigation/app_navigation.dart';
+import 'package:movie_report_app/common/widgets/movie/movie_card.dart';
 import 'package:movie_report_app/domain/movie/entities/movie.dart';
 import 'package:movie_report_app/presentation/home/bloc/trendings_cubit.dart';
 import 'package:movie_report_app/presentation/home/bloc/trendings_state.dart';

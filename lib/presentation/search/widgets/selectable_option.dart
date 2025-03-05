@@ -21,7 +21,13 @@ class SelectableOption extends StatelessWidget {
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: isSelected ? AppColors.primary : AppColors.secondBackground,
+          color: isSelected ? AppColors.primary : null,
+          border: isSelected
+              ? null
+              : Border.all(
+                  color: AppColors.secondBackground,
+                  width: .5,
+                ),
         ),
         child: Center(child: Text(title)),
       ),

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_report_app/common/helper/navigation/app_navigation.dart';
 import 'package:movie_report_app/core/configs/assets/app_images.dart';
 import 'package:movie_report_app/presentation/auth/pages/signin.dart';
-import 'package:movie_report_app/presentation/home/pages/home.dart';
+import 'package:movie_report_app/presentation/root/pages/root.dart';
 import 'package:movie_report_app/presentation/splash/bloc/splash_cublit.dart';
 import 'package:movie_report_app/presentation/splash/bloc/splash_state.dart';
 
@@ -19,7 +19,7 @@ class SplashPage extends StatelessWidget {
             AppNavigation.pushReplacement(context, SigninPage());
           }
           if (state is Authenticated) {
-            AppNavigation.pushReplacement(context, const HomePage());
+            AppNavigation.pushReplacement(context, const Root());
           }
         },
         child: Stack(

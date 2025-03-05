@@ -22,7 +22,7 @@ class MovieWatchPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VideoPlayerBody(movieId: movieEntity.id!),
+            // VideoPlayerBody(movieId: movieEntity.id!),
             const SizedBox(height: 16),
             VideoTitle(title: movieEntity.title!),
             const SizedBox(height: 16),
@@ -36,9 +36,9 @@ class MovieWatchPage extends StatelessWidget {
             const SizedBox(height: 16),
             VideoOverview(overview: movieEntity.overview!),
             const SizedBox(height: 16),
-            RecommendationMovies(movieId: movieEntity.id!),
+            // RecommendationMovies(movieId: movieEntity.id!),
             const SizedBox(height: 16),
-            SimilarMovies(movieId: movieEntity.id!),
+            // SimilarMovies(movieId: movieEntity.id!),
             const SizedBox(height: 16),
           ],
         ),

@@ -10,6 +10,7 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit() : super(SearchInitial());
 
   TextEditingController textEditingController = TextEditingController();
+
   void search(String query, SearchType searchType) {
     if (query.isEmpty) return;
     emit(SearchLoading());

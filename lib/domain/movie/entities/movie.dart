@@ -1,6 +1,10 @@
+import 'package:hive/hive.dart';
 import 'package:movie_report_app/core/configs/assets/app_images.dart';
 
-class MovieEntity {
+part 'movie.g.dart';
+
+@HiveType(typeId: 0)
+class MovieEntity extends HiveObject {
   MovieEntity({
     required this.backdropPath,
     required this.id,
@@ -19,24 +23,41 @@ class MovieEntity {
     required this.voteCount,
   });
 
+  @HiveField(0)
   final String? backdropPath;
+  @HiveField(1)
   final int? id;
+  @HiveField(2)
   final String? title;
+  @HiveField(3)
   final String? originalTitle;
+  @HiveField(4)
   final String? overview;
+  @HiveField(5)
   final String? posterPath;
+  @HiveField(6)
   final String? mediaType;
+  @HiveField(7)
   final bool? adult;
+  @HiveField(8)
   final String? originalLanguage;
+  @HiveField(9)
   final List<int> genreIds;
+  @HiveField(10)
   final double? popularity;
+  @HiveField(11)
   final DateTime? releaseDate;
+  @HiveField(12)
   final bool? video;
+  @HiveField(13)
   final double? voteAverage;
+  @HiveField(14)
   final int? voteCount;
 
   String providePosterPath() {
     if (posterPath == null) return AppImages.defaultImage;
-    return AppImages.movieImageBasePath + posterPath!;
+    String imagePath = AppImages.movieImageBasePath + posterPath!;
+
+    return imagePath;
   }
 }

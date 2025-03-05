@@ -26,7 +26,13 @@ class SearchContent extends StatelessWidget {
               childAspectRatio: 0.6,
             ),
             itemBuilder: (context, index) {
-              return MovieCard(movieEntity: state.movies[index]);
+              print('object');
+              return MovieCard(
+                movieEntity: state.movies[index],
+                onTap: () {
+                  print('object');
+                },
+              );
             },
           );
         }

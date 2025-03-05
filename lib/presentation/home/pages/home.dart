@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_report_app/common/helper/navigation/app_navigation.dart';
 import 'package:movie_report_app/common/widgets/appbar/app_bar.dart';
 import 'package:movie_report_app/core/configs/assets/app_vectors.dart';
-import 'package:movie_report_app/presentation/home/bloc/trendings_cubit.dart';
 import 'package:movie_report_app/presentation/home/widgets/category_text.dart';
 import 'package:movie_report_app/presentation/home/widgets/now_playing_movies.dart';
 import 'package:movie_report_app/presentation/home/widgets/popular_tv.dart';

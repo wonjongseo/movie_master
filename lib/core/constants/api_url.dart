@@ -29,29 +29,29 @@ class ApiUrl {
   static const getNowPlayingMovies = "movie/now_playing";
 
   static const getMoive = '${tmDBbaseUrl}movie/';
-  static const getMovieTrailer = "/videos?language=en-US";
+  static const getMovieTrailer = "/videos?language=ko-KR";
 
   // static const getMovieDetails =
-  //     "https://api.themoviedb.org/3/movie/${id}?language=en-US";
-  static const getRecommendation = "recommendations?language=en-US&page=1";
-  static const getSimilar = "similar?language=en-US&page=1";
+  //     "https://api.themoviedb.org/3/movie/${id}?language=ko-KR";
+  static const getRecommendation = "recommendations?language=ko-KR&page=1";
+  static const getSimilar = "similar?language=ko-KR&page=1";
 
   // static const getMoviesByCategory =
-  //     "https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1";
+  //     "https://api.themoviedb.org/3/movie/${category}?language=ko-KR&page=1";
 
   static const getTv = '${tmDBbaseUrl}tv/';
 
   static const getTrendingTv =
-      "https://api.themoviedb.org/3/trending/tv/day?language=en-US";
-  static const getPopularTv = "${getTv}popular?language=en-US&page=1";
-// static const getTvTrailers =`https://api.themoviedb.org/3/tv/${id}/videos?language=en-US`;
-// static const getTvDetails =`https://api.themoviedb.org/3/tv/${id}?language=en-US`;
+      "https://api.themoviedb.org/3/trending/tv/day?language=ko-KR";
+  static const getPopularTv = "${getTv}popular?language=ko-KR&page=1";
+// static const getTvTrailers =`https://api.themoviedb.org/3/tv/${id}/videos?language=ko-KR`;
+// static const getTvDetails =`https://api.themoviedb.org/3/tv/${id}?language=ko-KR`;
 
-// static const getTvsByCategory =`https://api.themoviedb.org/3/tv/${category}?language=en-US&page=1`;
+// static const getTvsByCategory =`https://api.themoviedb.org/3/tv/${category}?language=ko-KR&page=1`;
 
 // delete
 // static const getTvKeywords ="https://api.themoviedb.org/3/tv/${id}/keywords";
-//static const getRecommendationTvs = "recommendations?language=en-US&page=1";
+//static const getRecommendationTvs = "recommendations?language=ko-KR&page=1";
   // static const getSimilarTvs =
-  //     "https://api.themoviedb.org/3/tv/${id}/similar?language=en-US&page=1";
+  //     "https://api.themoviedb.org/3/tv/${id}/similar?language=ko-KR&page=1";
 }
