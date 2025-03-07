@@ -11,6 +11,7 @@ import 'package:movie_report_app/common/helper/app_string.dart';
 import 'package:movie_report_app/core/configs/theme/app_theme.dart';
 import 'package:movie_report_app/domain/movie/entities/movie.dart';
 import 'package:movie_report_app/domain/my_movie/entity/my_movie_entity.dart';
+import 'package:movie_report_app/presentation/calendar/bloc/calendar_cubit.dart';
 import 'package:movie_report_app/presentation/home/bloc/trendings_cubit.dart';
 import 'package:movie_report_app/presentation/splash/bloc/splash_cublit.dart';
 import 'package:movie_report_app/presentation/splash/pages/splash.dart';
@@ -45,6 +46,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => TrendingsCubit()..getTrendingMovies(1),
         ),
+        BlocProvider(
+            create: (context) => CalendarCubit()..getMyMoviesByMonth()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,

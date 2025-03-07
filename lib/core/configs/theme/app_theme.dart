@@ -39,7 +39,10 @@ class AppTheme {
     ),
   );
 
-  static final appLightTheme = ThemeData(
+  static final appLightTheme = ThemeData.light().copyWith(
+    textTheme: ThemeData.light().textTheme.apply(
+          fontFamily: "CookieRunFont",
+        ),
     primaryColor: AppColors.primary,
     brightness: Brightness.light,
     snackBarTheme: const SnackBarThemeData(

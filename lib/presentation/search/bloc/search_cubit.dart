@@ -11,6 +11,16 @@ class SearchCubit extends Cubit<SearchState> {
 
   TextEditingController textEditingController = TextEditingController();
 
+  void onClickMovie(int selectedIndex) {
+    if (state is MoviesLoadied) {
+      emit(
+        MoviesLoadied(
+            selectedIndex: selectedIndex,
+            movies: (state as MoviesLoadied).movies),
+      );
+    }
+  }
+
   void search(String query, SearchType searchType) {
     if (query.isEmpty) return;
     emit(SearchLoading());

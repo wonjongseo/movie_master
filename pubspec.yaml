@@ -41,6 +41,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   equatable: ^2.0.7
+  cached_network_image: ^3.4.1
+  expansion_tile_card: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -57,17 +59,64 @@ flutter:
     - assets/vectors/
     - .env
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: ZenMaruGothic
+      fonts:
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Light.ttf
+          weight: 200
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf
+          weight: 300
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf
+          weight: 900
+    # - family: ZenMaruGothic
+    #   fonts:
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.ttf
+    #       weight: 100
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.ttf
+    #       weight: 200
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf
+    #       weight: 300
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf
+    #       weight: 400
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Medium.ttf
+    #       weight: 500
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Medium.ttf
+    #       weight: 600
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.ttf
+    #       weight: 700
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.ttf
+    #       weight: 800
+    #     - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.ttf
+    #       weight: 900
+    - family: CookieRunFont
+      fonts:
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Regular.ttf
+          weight: 100
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Regular.ttf
+          weight: 200
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Bold.ttf
+          weight: 500
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Black.ttf
+          weight: 800
+        - asset: assets/fonts/CookieRunFont_TTF/CookieRun-Black.ttf
+          weight: 900

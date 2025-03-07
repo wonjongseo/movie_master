@@ -17,7 +17,7 @@ class SearchField extends StatelessWidget {
               context.read<SelectableOptionCubit>().state,
             );
       },
-      hintText: '검색...',
+      hintText: '제목을 입력해주세요',
     );
   }
 }

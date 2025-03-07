@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:movie_report_app/core/constants/db_key.dart';
@@ -70,11 +72,22 @@ class MyMovieServiceImpl extends MyMovieService {
               data.watchDate!.month == month.month)
           .toList();
 
-      print('allData : ${allData}');
-
       return Right(allData);
     } catch (e) {
       return Left(e);
+    }
+  }
+
+  @override
+  Future<Either> deleteItem({required String key}) async {
+    try {
+      var box = await Hive.openBox<MyMovieEntity>(DbKey.myMovieDBKey);
+      box.delete(key);
+
+      return const Right('기록한 영화가 삭제되었습니다.');
+    } catch (e) {
+      log(e.toString());
+      return const Left('나중에 다시 시도해주세요.');
     }
   }
 }

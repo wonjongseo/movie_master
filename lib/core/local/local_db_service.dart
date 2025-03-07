@@ -10,4 +10,6 @@ abstract class LocalDbService<T> {
 
   /// is Data Available
   Future<bool> isDataAvailable();
+
+  Future<Either> deleteItem({required String key});
 }

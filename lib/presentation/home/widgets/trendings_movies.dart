@@ -46,7 +46,7 @@ class TrendingsMovies extends StatelessWidget {
             }
             if (state is TrendingsMoviesLoaded) {
               List<String> imagesLink = state.movies
-                  .map((MovieEntity item) => item.providePosterPath())
+                  .map((MovieEntity item) => item.getPosterPath())
                   .toList();
 
               return FanCarouselImageSlider.sliderType1(

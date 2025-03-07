@@ -29,7 +29,7 @@ class VideoPlayerBody extends StatelessWidget {
             );
           }
           if (state is FailureLoadTrailer) {
-            return Text(state.errorMessage);
+            return const Text('');
           }
           return Container();
         },

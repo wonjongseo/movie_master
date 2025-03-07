@@ -54,9 +54,16 @@ class MovieEntity extends HiveObject {
   @HiveField(14)
   final int? voteCount;
 
-  String providePosterPath() {
+  String getPosterPath() {
     if (posterPath == null) return AppImages.defaultImage;
     String imagePath = AppImages.movieImageBasePath + posterPath!;
+
+    return imagePath;
+  }
+
+  String? get getBackdropPathImagePath {
+    if (backdropPath == null) return null;
+    String imagePath = AppImages.movieImageBasePath + backdropPath!;
 
     return imagePath;
   }

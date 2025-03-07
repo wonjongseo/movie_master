@@ -33,7 +33,7 @@ class MovieCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border:
-              isClicked ? Border.all(color: AppColors.primary, width: 5) : null,
+              isClicked ? Border.all(color: AppColors.primary, width: 2) : null,
         ),
         child: AspectRatio(
           aspectRatio: .6,
@@ -48,7 +48,7 @@ class MovieCard extends StatelessWidget {
                       color: Colors.white,
                       image: DecorationImage(
                           fit: BoxFit.fill,
-                          image: NetworkImage(movieEntity.providePosterPath())),
+                          image: NetworkImage(movieEntity.getPosterPath())),
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(8),
                           topRight: Radius.circular(8))),

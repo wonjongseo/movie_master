@@ -9,8 +9,8 @@ class SearchLoading extends SearchState {}
 
 class MoviesLoadied extends SearchState {
   final List<MovieEntity> movies;
-
-  MoviesLoadied({required this.movies});
+  final int selectedIndex;
+  MoviesLoadied({required this.movies, this.selectedIndex = -1});
 }
 
 class TvsLoaded extends SearchState {

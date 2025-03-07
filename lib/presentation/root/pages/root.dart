@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:movie_report_app/presentation/calendar/pages/calendar.dart';
-import 'package:movie_report_app/presentation/edit_my_movie/pages/edit_my_movie_page.dart';
+import 'package:movie_report_app/presentation/calendar/pages/calendar_back.dart';
+import 'package:movie_report_app/presentation/calendar/pages/calendar_page.dart';
+import 'package:movie_report_app/presentation/add_my_movie/pages/add_my_movie_page.dart';
 import 'package:movie_report_app/presentation/home/pages/home.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -16,9 +17,9 @@ class Root extends StatelessWidget {
 
     int _currentIndex = 0;
     List<Widget> _buildScreens = [
-      const Calendar(),
+      const CalendarPage(),
       HomePage(),
-      EditMyMoviePage(),
+      AddMyMoviePage(),
       Text('data2'),
       Text('data3')
     ];

@@ -7,11 +7,13 @@ class ColTextAndWidget extends StatelessWidget {
     required this.label,
     // this.onTapIcon,
     this.labelWidget,
+    this.labelStyle,
     required this.widget,
     this.vertical,
   }) : super(key: key);
 
   final String label;
+  final TextStyle? labelStyle;
   // final Function()? onTapIcon;
   final Widget? labelWidget;
   final Widget widget;
@@ -31,7 +33,10 @@ class ColTextAndWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text(label), if (labelWidget != null) labelWidget!],
+              children: [
+                Text(label, style: labelStyle),
+                if (labelWidget != null) labelWidget!
+              ],
             ),
           ),
           Padding(

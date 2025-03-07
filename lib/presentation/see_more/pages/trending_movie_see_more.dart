@@ -21,7 +21,7 @@ class _TrendingMovieSeeMoreState extends State<TrendingMovieSeeMore> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppbar(
-        title: Text('Trending Movies'),
+        title: Text('핫한 영회'),
       ),
       body: BlocBuilder<TrendingsCubit, TrendingsState>(
         builder: (context, state) {

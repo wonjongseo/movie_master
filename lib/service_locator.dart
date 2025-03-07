@@ -22,6 +22,7 @@ import 'package:movie_report_app/domain/movie/usecases/get_similar_movies.dart';
 import 'package:movie_report_app/domain/movie/usecases/get_trending_movies.dart';
 import 'package:movie_report_app/domain/movie/usecases/search_movies.dart';
 import 'package:movie_report_app/domain/my_movie/repository/my_movie_repository.dart';
+import 'package:movie_report_app/domain/my_movie/usecases/delete_my_movie_usecase.dart';
 import 'package:movie_report_app/domain/my_movie/usecases/get_all_my_movie_usecase.dart';
 import 'package:movie_report_app/domain/my_movie/usecases/get_my_movie_by_month_usecase.dart';
 import 'package:movie_report_app/domain/my_movie/usecases/insert_my_movie_usecase.dart';
@@ -70,4 +71,5 @@ void setupServiceLocator() {
   sl.registerSingleton<GetAllMyMovieUsecase>(GetAllMyMovieUsecase());
   sl.registerSingleton<GetMyMovieByMonthUsecase>(GetMyMovieByMonthUsecase());
   sl.registerSingleton<InsertMyMovieUsecase>(InsertMyMovieUsecase());
+  sl.registerSingleton<DeleteMyMovieUsecase>(DeleteMyMovieUsecase());
 }

@@ -7,4 +7,6 @@ abstract class MyMovieRepository {
   Future<Either> getMyMovie({required String key});
   Future<Either> addMyMovie(
       {required String key, required MyMovieEntity myMovie});
+
+  Future<Either> deleteMyMovie({required String key});
 }
