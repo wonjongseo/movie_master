@@ -20,4 +20,9 @@ class MyMovieRepositoryImpl extends MyMovieRepository {
       {required String key, required MyMovieEntity myMovie}) {
     return sl<MyMovieService>().insertItem(key: key, object: myMovie);
   }
+
+  @override
+  Future<Either> getMyMoviesByMonth(DateTime month) async {
+    return sl<MyMovieService>().getMyMoviesByMonth(month);
+  }
 }

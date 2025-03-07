@@ -4,7 +4,9 @@ import 'package:movie_report_app/core/constants/db_key.dart';
 import 'package:movie_report_app/core/local/local_db_service.dart';
 import 'package:movie_report_app/domain/my_movie/entity/my_movie_entity.dart';
 
-abstract class MyMovieService extends LocalDbService<MyMovieEntity> {}
+abstract class MyMovieService extends LocalDbService<MyMovieEntity> {
+  Future<Either> getMyMoviesByMonth(DateTime month);
+}
 
 class MyMovieServiceImpl extends MyMovieService {
   @override
@@ -13,7 +15,6 @@ class MyMovieServiceImpl extends MyMovieService {
       var box = await Hive.openBox<MyMovieEntity>(DbKey.myMovieDBKey);
 
       var allData = box.values.toList();
-      print('allData : ${allData}');
 
       return Right(allData);
     } catch (e) {
@@ -55,6 +56,25 @@ class MyMovieServiceImpl extends MyMovieService {
       return box.isEmpty;
     } catch (e) {
       rethrow;
+    }
+  }
+
+  @override
+  Future<Either> getMyMoviesByMonth(DateTime month) async {
+    try {
+      var box = await Hive.openBox<MyMovieEntity>(DbKey.myMovieDBKey);
+
+      var allData = box.values
+          .where((data) =>
+              data.watchDate!.year == month.year &&
+              data.watchDate!.month == month.month)
+          .toList();
+
+      print('allData : ${allData}');
+
+      return Right(allData);
+    } catch (e) {
+      return Left(e);
     }
   }
 }

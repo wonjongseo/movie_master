@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:movie_report_app/common/widgets/col_text_and_widget.dart';
 import 'package:movie_report_app/common/widgets/custom_text_form_field.dart';
 import 'package:movie_report_app/domain/my_movie/entity/my_movie_entity.dart';
-import 'package:movie_report_app/domain/my_movie/usecases/insert_my_movie_usecase.dart';
 import 'package:movie_report_app/presentation/edit_my_movie/bloc/edit_my_movie_cubit.dart';
 import 'package:movie_report_app/presentation/edit_my_movie/widgets/searched_movie.dart';
 import 'package:movie_report_app/presentation/search/bloc/search_cubit.dart';
 import 'package:movie_report_app/presentation/search/bloc/selectable_option_cubit.dart';
 import 'package:movie_report_app/presentation/search/widgets/search_field.dart';
 import 'package:movie_report_app/presentation/search/widgets/search_options.dart';
-import 'package:movie_report_app/service_locator.dart';
 
 class EditMyMoviePage extends StatelessWidget {
-  EditMyMoviePage({super.key});
+  EditMyMoviePage({super.key, this.dateTime});
 
-  TextEditingController _titleCnt = TextEditingController();
+  final DateTime? dateTime;
+
+  final TextEditingController _titleCnt = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class EditMyMoviePage extends StatelessWidget {
               BlocProvider(create: (context) => SelectableOptionCubit()),
               BlocProvider(create: (context) => SearchCubit()),
               BlocProvider(
-                create: (context) => EditMyMovieCubit(),
+                create: (context) => EditMyMovieCubit(dateTime: dateTime),
               )
             ],
             child: BlocBuilder<EditMyMovieCubit, MyMovieEntity>(
@@ -50,6 +51,7 @@ class EditMyMoviePage extends StatelessWidget {
                   ColTextAndWidget(
                     label: '제목',
                     widget: CustomTextFormField(
+                      controller: _titleCnt,
                       hintText: myMovieModel.movieEntity?.title,
                     ),
                   ),
@@ -63,12 +65,13 @@ class EditMyMoviePage extends StatelessWidget {
 
                   ElevatedButton(
                       onPressed: () async {
-                        sl<InsertMyMovieUsecase>().call(params: {
-                          '12': MyMovieEntity(
-                              title: 'Hello',
-                              watchDate: DateTime.now(),
-                              impression: 'Good !!')
-                        });
+                        context.read<EditMyMovieCubit>().aa();
+                        // sl<InsertMyMovieUsecase>().call(params: {
+                        //   '12': MyMovieEntity(
+                        //       title: 'Hello',
+                        //       watchDate: DateTime.now(),
+                        //       impression: 'Good !!')
+                        // });
                       },
                       child: Text('Test')),
                   // CustomTextFormField(),
@@ -85,7 +88,8 @@ class EditMyMoviePage extends StatelessWidget {
     return CustomTextFormField(
       readOnly: true,
       hintText: context.read<EditMyMovieCubit>().state.watchDate != null
-          ? DateFormat.yM().format(myMovieModel.watchDate!)
+          ? DateFormat.yMMMd(Get.locale.toString())
+              .format(myMovieModel.watchDate!)
           : '날자',
       widget: const Padding(
         padding: EdgeInsets.only(right: 10),
